@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.kanban-group {
+  min-width: 400px;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+}

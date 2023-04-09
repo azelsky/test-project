@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ groupDescription.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content
+    cdkDropList
+    [cdkDropListData]="{ source: groupDescription.source, tasks}"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <app-task
+      *ngFor="let task of tasks; trackBy: trackByFn"
+      [title]="task.title"
+      [cdkDragData]="task"
+      (deleteTask)="onDeleteTask(task.id, task.status)"
+      (editTask)="onEditTask(task.id)"
+      cdkDrag
+      class="task"
+    ></app-task>
+  </mat-card-content>
+</mat-card>

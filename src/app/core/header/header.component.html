@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-between">
+    <div>My App</div>
+    <div fxLayoutAlign="space-between center">
+      <mat-slide-toggle
+        [color]="switcherColor"
+        [checked]="isDarkMode"
+        (change)="onThemeSwitcherChange($event)">
+      </mat-slide-toggle>
+      <mat-icon [color]="switcherColor">dark_mode</mat-icon>
+    </div>
+  </div>
+</mat-toolbar>

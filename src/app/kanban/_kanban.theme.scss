@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@mixin kanban-theme($theme) {
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+
+  .task-background {
+    background: mat.get-color-from-palette($background, background);
+  }
+
+  .task-title, .task-button {
+    color: mat.get-color-from-palette($foreground, text);
+  }
+}

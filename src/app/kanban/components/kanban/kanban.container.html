@@ -1,0 +1,17 @@
+<div class="actions-bar" fxLayout="row" fxLayoutAlign="end">
+  <button mat-raised-button color="primary" (click)="onOpenCreateTaskModal()">
+    <mat-icon>add</mat-icon>
+    Create New Task
+  </button>
+</div>
+
+<app-kanban-groups
+  [openTasks]="(openTasks$ | async) || []"
+  [inProgressTasks]="(inProgressTasks$ | async) || []"
+  [doneTasks]="(doneTasks$ | async) || []"
+  (moveTask)="onMoveTask($event)"
+  (deleteTask)="onDeleteTask($event)"
+  (editTask)="onOpenEditTaskModal($event)"
+></app-kanban-groups>
+
+<router-outlet name="dialogs"></router-outlet>

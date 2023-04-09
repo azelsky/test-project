@@ -1,0 +1,22 @@
+<mat-card class="task-background">
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-card-title class="task-title" [matTooltip]="title" [matTooltipShowDelay]="500">{{ title }}</mat-card-title>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="onEdit()">
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+  <button mat-menu-item (click)="onDelete()">
+    <mat-icon>delete</mat-icon>
+    <span>Delete</span>
+  </button>
+</mat-menu>
+

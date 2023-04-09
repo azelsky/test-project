@@ -1,0 +1,7 @@
+@mixin mat-dialog() {
+  .mdc-dialog {
+    .mdc-dialog__actions {
+      padding: 16px 24px;
+    }
+  }
+}

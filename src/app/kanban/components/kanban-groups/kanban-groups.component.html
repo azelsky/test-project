@@ -1,0 +1,13 @@
+<div cdkDropListGroup cdkScrollable class="container" fxLayout="row" fxLayoutAlign="space-between">
+  <app-kanban-group
+    *ngFor="let groupDescription of groupsDescription"
+    [tasks]="tasks[groupDescription.source]"
+    [groupDescription]="groupDescription"
+    (moveTask)="onMoveTask($event)"
+    (deleteTask)="onDeleteTask($event)"
+    (editTask)="onEditTask($event)"
+    class="kanban-group"
+    fxFlex="33"
+  ></app-kanban-group>
+</div>
+

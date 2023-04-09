@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>{{ actionName }} Task</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <mat-form-field class=input-field *ngIf="form.controls.title as title">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput placeholder="Enter Task Title"/>
+      <mat-error *ngIf="title.errors?.['required']">Title is required</mat-error>
+      <mat-error *ngIf="title?.errors?.['minlength'] as error">
+        Title should contain at least {{ error['requiredLength']}} characters
+      </mat-error>
+      <mat-error *ngIf="title?.errors?.['maxlength'] as error">
+        Only {{ error['requiredLength']}} characters allowed.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button type="button" (click)="onClose()">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="form.invalid">Create</button>
+  </div>
+</form>
+
